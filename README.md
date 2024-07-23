@@ -58,8 +58,7 @@ quiz-game/
 ├── templates/
 │   ├── index.html
 │   └── quiz.html
-
-
+```
 
 ## 🎨 UI and Styling
 
