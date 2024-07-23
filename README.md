@@ -48,15 +48,17 @@ Follow these steps to set up and run the project on your local machine.
     Navigate to `http://localhost:8080` to start the quiz game.
 
 ## 📁 File Structure
+```plaintext
 quiz-game/
 │
 ├── main.go
 ├── questions.csv
 ├── static/
-│ └── style.css
+│   └── style.css
 ├── templates/
-│ ├── index.html
-│ └── quiz.html
+│   ├── index.html
+│   └── quiz.html
+
 
 
 ## 🎨 UI and Styling
