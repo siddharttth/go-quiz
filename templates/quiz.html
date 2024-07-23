@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Game</h1>
+        {{if .}}
+            {{if eq (printf "%T" .) "int"}}
+                <div class="certificate">
+                    <h1>Certificate of Completion</h1>
+                    <p>This is to certify that you have successfully completed the quiz on how well you know Siddharth.</p>
+                    <p>Your score: {{.}} / 3</p>
+                    <div class="signature">
+                        <p>Made by Siddharth</p>
+                    </div>
+                    <div class="contact">
+                        <p>Contact: siddharth.shekharr@gmail.com</p>
+                    </div>
+                </div>
+                <a href="/quiz">Play Again</a>
+            {{else}}
+                <form method="post">
+                    {{range $index, $question := .}}
+                        <p>{{$question.Question}}</p>
+                        <input type="text" name="answer{{$index}}" required>
+                    {{end}}
+                    <button type="submit">Submit</button>
+                </form>
+            {{end}}
+        {{else}}
+            <p>No questions available</p>
+        {{end}}
+    </div>
+</body>
+</html>
